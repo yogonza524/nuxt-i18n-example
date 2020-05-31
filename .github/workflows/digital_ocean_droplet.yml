@@ -29,7 +29,7 @@ jobs:
     - run: npm run generate
     - uses: actions/upload-artifact@master
       with:
-        name: upload dist
+        name: dist_folder
         path: dist
   deploy:
     runs-on: ubuntu-latest
@@ -37,7 +37,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@master
         with:
-          name: Download dist folder artifact
+          name: dist_folder
           path: dist 
       - uses: garygrossgarten/github-action-scp@release
         with:
