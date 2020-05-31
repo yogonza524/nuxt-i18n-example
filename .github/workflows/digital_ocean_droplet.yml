@@ -39,6 +39,14 @@ jobs:
         with:
           name: dist_folder
           path: dist 
+      - uses: appleboy/ssh-action@master
+        name: Remove html folder
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          port: ${{ secrets.PORT }}
+          script: rm -rf /var/www/html && mkdir -p /var/www/html
       - uses: garygrossgarten/github-action-scp@release
         with:
           local: dist
