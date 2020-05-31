@@ -45,6 +45,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.PRIVATE_KEY }}
+          passphrase: ${{ secrets.PRIVATE_KEY_PASSPRHASE }}  
           port: ${{ secrets.PORT }}
           script: rm -rf /var/www/html && mkdir -p /var/www/html
       - uses: garygrossgarten/github-action-scp@release
