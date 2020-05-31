@@ -27,6 +27,10 @@ jobs:
         path: dist 
     - run: npm install
     - run: npm run generate
+    - uses: actions/upload-artifact@master
+      with:
+        name: upload dist
+        path: dist
   deploy:
     runs-on: ubuntu-latest
     needs: build
