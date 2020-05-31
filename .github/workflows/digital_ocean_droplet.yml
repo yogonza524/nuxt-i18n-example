@@ -27,10 +27,12 @@ jobs:
     - run: npm install
     - run: npm run generate
   deploy:
-    uses: garygrossgarten/github-action-scp@release
-    with:
-      local: dist
-      remote: /var/www/html
-      host: ${{ secrets.HOST }}
-      username: ${{ secrets.SSH_USER }}
-      password: ${{ secrets.PASSWORD }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: garygrossgarten/github-action-scp@release
+        with:
+          local: dist
+          remote: /var/www/html
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.PASSWORD }}
