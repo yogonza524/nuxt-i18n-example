@@ -46,4 +46,5 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.SSH_USER }}
           privateKey: ${{ secrets.PRIVATE_KEY }}  
+          passphrase: ${{ secrets.PRIVATE_KEY_PASSPRHASE }} 
           tryKeyboard: true 
