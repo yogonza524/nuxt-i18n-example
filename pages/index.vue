@@ -6,7 +6,7 @@
         i18n-test - {{ $t('welcome') }}
       </h1>
       <h2 class="subtitle">
-        Nuxt.js project
+        Nuxt.js Hello Gonzalo
       </h2>
       <nuxt-link :to="localePath('index', 'en')">Homepage in English</nuxt-link>
       <br>
