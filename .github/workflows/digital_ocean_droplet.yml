@@ -24,6 +24,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+        path: dist 
     - run: npm install
     - run: npm run generate
   deploy:
@@ -32,6 +33,7 @@ jobs:
     steps:
       - uses: garygrossgarten/github-action-scp@release
         with:
+          path: dist 
           local: dist
           remote: /var/www/html
           host: ${{ secrets.HOST }}
